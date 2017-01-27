@@ -41,12 +41,12 @@ RSpec.describe SponsoredPostsController, type: :controller do
   
   describe "POST create" do
     it "increases the number of SponsoredPost by 1" do
-      expect{post :create, topic_id: my_topic.id, sponsored_post: {title: RandomData.random_sentence, body: RandomData.random_paragraph, price: 25}}.to change(Post, :count).by(1)
+      expect{post :create, topic_id: my_topic.id, sponsored_post: {title: RandomData.random_sentence, body: RandomData.random_paragraph, price: 25}}.to change(SponsoredPost, :count).by(1)
     end
     
     it "assigns the new post to @sponsoredpost" do
       post :create, topic_id: my_topic.id, sponsored_post: {title: RandomData.random_sentence, body: RandomData.random_paragraph, price: 25}
-      expect(assigns(:sponsored_post)).to eq SponsoredPost.last
+      expect(assigns(:sponsoredpost)).to eq SponsoredPost.last
     end
     
     it "redirects to the new sponsored post" do

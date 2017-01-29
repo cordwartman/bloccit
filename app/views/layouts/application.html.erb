@@ -16,7 +16,14 @@
         <li><%= link_to "About", about_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Sign Up", new_user_path %></li>
+        <li>
+          <% if current_user %>
+            <%= current_user.name %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_session_path %> or
+            <%= link_to "Sign Up", new_user_path %>
+          <% end %>
+        </li>
       </ul>
     </div>
     <% if flash[:notice] %>

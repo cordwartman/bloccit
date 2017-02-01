@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
@@ -36,6 +37,7 @@
         </ul>
       </div>
     </div>
+  </nav>
     <% if flash[:notice] %>
       <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -48,7 +50,9 @@
       </div>
     <% end %>
   
-    <%= yield %>
+
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>

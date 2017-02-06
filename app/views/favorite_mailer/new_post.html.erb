@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>You're following your new post: "<%= @post.title %>". You will be notified of new comments.</h1>
+    <p>
+      <%= @post.body %>
+    </p>
+    <p>
+      <%= link_to "View Post on site", topic_post_url(@post.topic, @post) %>
+    </p>
+  </body>
+</html>
